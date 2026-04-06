@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | Canine Wellness Journal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #2D6A4F;
+      --forest-dark: #1B4332;
+      --cream: #FBF7F0;
+      --text: #1A1A1A;
+      --muted: #6B7280;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 32px;
+    }
+    .dog-frame {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      margin: 0 auto 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid #FFFFFF;
+      box-shadow: 0 20px 50px -20px rgba(27, 67, 50, 0.4), 0 0 0 1px rgba(45, 106, 79, 0.08);
+      background: #E5E7EB;
+    }
+    .dog-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2.25rem, 6vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--forest-dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .tagline {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--forest);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 480px) {
+      .dog-frame { max-width: 280px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo">Canine Wellness Journal</div>
+    <div class="dog-frame">
+      <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=900&q=80" alt="A cute golden retriever puppy looking at the camera">
+    </div>
+    <h1>Something good is coming.</h1>
+    <p class="tagline">Real science, real stories, and real food for the dogs we love.</p>
+    <span class="badge">Launching Soon</span>
+  </main>
+</body>
+</html>
