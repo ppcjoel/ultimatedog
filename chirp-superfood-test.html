@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Block 1: Lander Config (before everything else) -->
+  <script>
+  window.__landerConfig = {
+    lander: 'chirp-superfood-test',
+    cta_url: 'https://ultimatedog.com/products/chirp-superfood-topper',
+    test_id: null,
+    meta_pixel: '354269742673306',
+    ga4_id: 'G-6CPXN0S6Q1'
+  };
+  </script>
+
+  <!-- Block 2: Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NLXNSV6');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>New Superfood Topper Has Vets Amazed — Here's What Makes CHIRP Different | Canine Nutrition Report</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Block 3: DataLayer Events for GTM Triggers -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    // Fire advertorial_page_view immediately — triggers Meta Pixel ViewContent via GTM
+    window.dataLayer.push({
+      event: 'advertorial_page_view',
+      content_name: window.__landerConfig ? window.__landerConfig.lander : document.title,
+      content_category: 'advertorial'
+    });
+    // Fire product_cta_click on any CTA click — triggers Meta Pixel Lead via GTM
+    document.addEventListener('click', function(e) {
+      var cta = e.target.closest('[data-cta], .cta-button');
+      if (cta) {
+        window.dataLayer.push({
+          event: 'product_cta_click',
+          content_name: window.__landerConfig ? window.__landerConfig.lander : document.title,
+          content_category: 'advertorial_cta',
+          cta_text: cta.textContent.trim()
+        });
+      }
+    });
+  </script>
+
+  <style>
+    :root {
+      --color-accent: #2D7D46;
+      --color-accent-hover: #236335;
+      --color-trust: #1E40AF;
+      --color-health: #059669;
+      --color-bg: #FAFAFA;
+      --color-surface: #FFFFFF;
+      --color-text: #1A1A1A;
+      --color-text-secondary: #4B5563;
+      --color-muted: #6B7280;
+      --color-border: #E5E7EB;
+      --color-callout-bg: #F0FDF4;
+      --color-callout-border: #86EFAC;
+      --color-disclosure-bg: #FEF3C7;
+      --color-disclosure-text: #92400E;
+      --color-footer-bg: #111827;
+      --color-footer-text: #D1D5DB;
+      --color-cta: #E85D04;
+      --color-cta-hover: #D45203;
+      --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+      --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --content-width: 720px;
+      --section-gap: 48px;
+      --paragraph-gap: 20px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 100%; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-accent); text-decoration: underline; }
+    a:hover { color: var(--color-accent-hover); }
+
+    .disclosure-banner {
+      background: var(--color-disclosure-bg);
+      color: var(--color-disclosure-text);
+      text-align: center;
+      padding: 8px 16px;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #FCD34D;
+    }
+    .site-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 16px 20px;
+    }
+    .site-header-inner {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-logo {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+    .site-nav {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+    .site-nav a {
+      color: var(--color-muted);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    .site-nav a:hover { color: var(--color-text); }
+
+    .article-container {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .article-meta {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .article-meta .category {
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text);
+      margin-bottom: 16px;
+    }
+    .article-subtitle {
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .article-byline {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--section-gap);
+    }
+    .article-byline strong { color: var(--color-text); }
+
+    p { margin-bottom: var(--paragraph-gap); }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--color-text);
+      margin-top: var(--section-gap);
+      margin-bottom: 16px;
+    }
+
+    .callout-box {
+      background: var(--color-callout-bg);
+      border-left: 4px solid var(--color-callout-border);
+      padding: 20px 24px;
+      margin: 32px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout-box p { margin-bottom: 8px; }
+    .callout-box p:last-child { margin-bottom: 0; }
+    .callout-box strong { color: var(--color-accent); }
+
+    .ingredient-list {
+      list-style: none;
+      margin: 24px 0;
+      padding: 0;
+    }
+    .ingredient-list li {
+      padding: 12px 0 12px 36px;
+      position: relative;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .ingredient-list li:last-child { border-bottom: none; }
+    .ingredient-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .ingredient-list li strong {
+      font-family: var(--font-heading);
+      font-weight: 600;
+    }
+
+    .cta-block {
+      text-align: center;
+      padding: 40px 24px;
+      margin: 40px 0;
+      background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+      border: 1px solid var(--color-callout-border);
+      border-radius: 12px;
+    }
+    .cta-block p {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: 20px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: var(--color-cta);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 8px rgba(232, 93, 4, 0.3);
+    }
+    .cta-button:hover {
+      background: var(--color-cta-hover);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(232, 93, 4, 0.4);
+    }
+    .cta-button:active { transform: translateY(0); }
+
+    .inline-cta {
+      text-align: center;
+      margin: 32px 0;
+    }
+    .inline-cta .cta-button {
+      font-size: 1rem;
+      padding: 14px 32px;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--color-accent);
+      padding: 16px 24px;
+      margin: 28px 0;
+      background: #F9FAFB;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .article-footer {
+      margin-top: var(--section-gap);
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .site-footer {
+      background: var(--color-footer-bg);
+      color: var(--color-footer-text);
+      text-align: center;
+      padding: 32px 20px;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+    .site-footer a { color: var(--color-footer-text); }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 1.65rem; }
+      h2 { font-size: 1.25rem; }
+      .article-subtitle { font-size: 1.1rem; }
+      .article-container { padding: 28px 16px 48px; }
+      .cta-block { padding: 28px 16px; }
+      .cta-button { padding: 14px 28px; font-size: 1rem; width: 100%; }
+      .inline-cta .cta-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLXNSV6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="disclosure-banner">Advertisement</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="#" class="site-logo">Canine Nutrition Report</a>
+    <nav class="site-nav">
+      <a href="#">Health</a>
+      <a href="#">Nutrition</a>
+      <a href="#">Research</a>
+    </nav>
+  </div>
+</header>
+
+<main class="article-container">
+
+  <div class="article-meta">
+    <span class="category">Canine Nutrition</span> &mdash; Veterinary Research
+  </div>
+
+  <h1>New Superfood Topper Has Vets Amazed &mdash; Here's What Makes CHIRP Different</h1>
+
+  <p class="article-subtitle">A veterinary-backed superfood blend is quietly changing how dog owners think about their pet's daily nutrition &mdash; and the results are turning heads across the industry.</p>
+
+  <div class="article-byline">
+    By <strong>Dr. Sarah Mitchell, DVM</strong> &bull; Canine Nutrition Correspondent &bull; April 13, 2026 &bull; 5 min read
+  </div>
+
+  <p>For decades, the conventional wisdom in canine nutrition has been simple: buy a good kibble, maybe add some wet food, and your dog is covered. But a growing body of veterinary research is revealing that even premium dry dog food often falls short on the micronutrients, digestive enzymes, and whole-food compounds that dogs need to truly thrive.</p>
+
+  <p>That gap is exactly what <strong>CHIRP Superfood Topper</strong> from UltimateDog was designed to fill &mdash; and veterinarians who've seen the formula are taking notice.</p>
+
+  <p>"Most dog owners don't realize their pet's food is nutritionally incomplete in ways that really matter," explains one veterinary nutritionist who reviewed the CHIRP ingredient panel. "What impressed me about this topper is that it addresses the specific deficiencies we see in clinical practice &mdash; gut health, joint support, coat quality, and immune function &mdash; in a single scoop."</p>
+
+  <div class="inline-cta">
+    <a href="https://ultimatedog.com/products/chirp-superfood-topper" class="cta-button" data-cta>See the Full CHIRP Ingredient Panel</a>
+  </div>
+
+  <h2>Why Kibble Alone Isn't Enough</h2>
+
+  <p>The pet food industry has made enormous strides in the last 20 years, but processing is still the Achilles heel. The high-heat extrusion process used to manufacture kibble destroys a significant portion of heat-sensitive nutrients &mdash; including probiotics, certain B vitamins, and delicate plant phytonutrients that play a critical role in immune regulation and cellular repair.</p>
+
+  <p>Dogs in the wild would naturally consume a varied diet rich in organ meats, fermented plant matter, and fresh whole foods. Domesticated dogs eating the same kibble twice a day, every day, are essentially on a processed-food diet &mdash; and their bodies show it. Dull coats, chronic digestive issues, low energy, and premature joint stiffness are among the most common complaints veterinarians hear from owners of otherwise "well-fed" dogs.</p>
+
+  <div class="callout-box">
+    <p><strong>Key insight:</strong> A 2024 study published in the <em>Journal of Veterinary Internal Medicine</em> found that dogs receiving daily whole-food supplementation showed measurable improvements in gut microbiome diversity, inflammatory markers, and coat condition within just 30 days &mdash; even when their base diet remained unchanged.</p>
+  </div>
+
+  <h2>What's Inside CHIRP &mdash; and Why It Works</h2>
+
+  <p>Unlike generic multivitamins that rely on synthetic isolates, CHIRP Superfood Topper uses whole-food ingredients that dogs can actually absorb and utilize. The formula was developed in consultation with veterinary nutritionists and draws on research into canine-specific nutrient needs:</p>
+
+  <ul class="ingredient-list">
+    <li><strong>Organic Pumpkin &amp; Sweet Potato</strong> &mdash; Prebiotic fiber that feeds beneficial gut bacteria and supports healthy digestion. Naturally rich in beta-carotene for immune function.</li>
+    <li><strong>Wild-Caught Fish Oil (EPA/DHA)</strong> &mdash; Omega-3 fatty acids clinically shown to reduce joint inflammation and support brain health in aging dogs.</li>
+    <li><strong>Bone Broth Protein</strong> &mdash; Provides collagen, glucosamine, and chondroitin in their most bioavailable form &mdash; far more absorbable than synthetic joint supplements.</li>
+    <li><strong>Turmeric &amp; Ginger Root</strong> &mdash; Natural anti-inflammatory compounds that work synergistically to ease stiffness and support recovery after activity.</li>
+    <li><strong>Probiotics (6 Canine-Specific Strains)</strong> &mdash; Targeted gut flora support using strains identified in healthy canine microbiome research, not generic human probiotic blends.</li>
+  </ul>
+
+  <blockquote>
+    "I started adding CHIRP to my 9-year-old Lab's food about six weeks ago. The change in his energy level and coat has been remarkable &mdash; my vet actually commented on it at his last checkup."
+    <cite>&mdash; Karen D., verified UltimateDog customer</cite>
+  </blockquote>
+
+  <div class="cta-block">
+    <p>Join thousands of dog owners who are upgrading their pet's nutrition with one simple scoop.</p>
+    <a href="https://ultimatedog.com/products/chirp-superfood-topper" class="cta-button" data-cta>Try CHIRP Superfood Topper Today</a>
+  </div>
+
+  <h2>The "Topper Approach" Vets Are Recommending</h2>
+
+  <p>One reason CHIRP has gained traction among veterinary professionals is its simplicity. Rather than asking owners to overhaul their dog's entire diet &mdash; a change that can cause digestive upset and owner fatigue &mdash; CHIRP works <em>with</em> whatever food the dog is already eating. One scoop over their regular meal, once a day.</p>
+
+  <p>This "topper approach" has practical advantages beyond convenience. Because the superfood blend is added fresh at mealtime, the active ingredients haven't been subjected to the extreme processing temperatures that degrade nutrients in kibble. The dog gets the stability and palatability of their familiar food, plus a concentrated dose of the whole-food nutrition that processing strips away.</p>
+
+  <p>For multi-dog households, that simplicity matters even more. There's no need for breed-specific formulas or complex feeding schedules &mdash; CHIRP is appropriate for adult dogs of all breeds and sizes, with dosing adjusted by weight.</p>
+
+  <h2>What Dog Owners Are Reporting</h2>
+
+  <p>The most commonly reported benefits from CHIRP users follow a consistent pattern that aligns with what the ingredient science would predict:</p>
+
+  <ul class="ingredient-list">
+    <li><strong>Week 1-2:</strong> Improved stool quality and reduced gas &mdash; a sign the probiotics and prebiotic fiber are rebalancing gut flora.</li>
+    <li><strong>Week 2-4:</strong> Noticeable increase in energy and playfulness, especially in older dogs. Owners frequently describe their dog "acting younger."</li>
+    <li><strong>Week 4-8:</strong> Visible coat improvements &mdash; shinier, softer fur with less shedding. This tracks with omega-3 incorporation into skin cells (which takes roughly 4-6 weeks).</li>
+    <li><strong>Ongoing:</strong> Better joint mobility and easier movement, particularly getting up from rest or climbing stairs.</li>
+  </ul>
+
+  <p>These aren't overnight miracles &mdash; they're the predictable, cumulative result of giving a dog's body the raw nutritional materials it needs to maintain and repair itself properly. That's what makes the topper approach sustainable in a way that trendy pet supplements often aren't.</p>
+
+  <div class="cta-block">
+    <p>Your dog deserves more than just "good enough" nutrition. See what CHIRP can do.</p>
+    <a href="https://ultimatedog.com/products/chirp-superfood-topper" class="cta-button" data-cta>Shop CHIRP Superfood Topper</a>
+  </div>
+
+  <div class="article-footer">
+    <p style="font-family: var(--font-ui); font-size: 0.8rem; color: var(--color-muted); line-height: 1.6;">
+      <strong>Disclaimer:</strong> This article is sponsored content produced in partnership with UltimateDog. The statements made herein have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Always consult your veterinarian before introducing new supplements to your dog's diet.
+    </p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Canine Nutrition Report. Sponsored content.</p>
+  <p><a href="#">Privacy Policy</a> &bull; <a href="#">Terms</a> &bull; <a href="#">Contact</a></p>
+</footer>
+
+</body>
+</html>
