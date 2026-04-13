@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- PPC-TRACKING-START -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLXNSV6');</script>
+<!-- End Google Tag Manager -->
+<!-- PPC-TRACKING-END -->
+<!-- PPC-TRACKING-START -->
+<script>
+window.__landerConfig = {
+  lander: "index.html",
+  lander_version: "1.0",
+  test_id: "",
+  ctaUrl: "https://ultimatedog.com"
+};
+</script>
+<!-- PPC-TRACKING-END -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coming Soon | Canine Wellness Journal</title>
@@ -92,6 +111,12 @@
   </style>
 </head>
 <body>
+<!-- PPC-TRACKING-START -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLXNSV6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- PPC-TRACKING-END -->
   <main class="card">
     <div class="logo">Canine Wellness Journal</div>
     <div class="dog-frame">
@@ -101,5 +126,153 @@
     <p class="tagline">Real science, real stories, and real food for the dogs we love.</p>
     <span class="badge">Launching Soon</span>
   </main>
+<!-- PPC-TRACKING-START -->
+<script>
+(function(){
+  try{
+    var dl=window.dataLayer=window.dataLayer||[];
+    var cfg=window.__landerConfig||{};
+
+    /* ---------- 1. Parameter capture ---------- */
+    var sp=new URLSearchParams(window.location.search);
+    sp.forEach(function(v,k){
+      try{sessionStorage.setItem('lp_'+k,v)}catch(e){}
+    });
+    // Enrichment from config
+    ['lander','lander_version','test_id'].forEach(function(k){
+      if(cfg[k])try{sessionStorage.setItem('lp_'+k,cfg[k])}catch(e){}
+    });
+
+    /* Helper: collect all lp_ params */
+    function getLpParams(){
+      var p={};
+      for(var i=0;i<sessionStorage.length;i++){
+        var k=sessionStorage.key(i);
+        if(k&&k.indexOf('lp_')===0) p[k.slice(3)]=sessionStorage.getItem(k);
+      }
+      return p;
+    }
+
+    function buildUrl(base){
+      var p=getLpParams();
+      var u=new URL(base);
+      Object.keys(p).forEach(function(k){u.searchParams.set(k,p[k])});
+      return u.toString();
+    }
+
+    /* ---------- 2. CTA interception ---------- */
+
+    /* data-cta links/buttons — turn into real links with params */
+    document.addEventListener('click',function(e){
+      var el=e.target.closest('[data-cta]');
+      if(!el) return;
+      e.preventDefault();
+      var base=el.getAttribute('data-cta')||cfg.ctaUrl||el.href||'';
+      if(base){
+        var url=buildUrl(base);
+        dl.push({event:'cta_click',cta_url:url});
+        window.location.href=url;
+      }
+    });
+
+    /* Patch showModal — only fires event, does NOT open URL
+       (the modal "Proceed to Shop" button handles the actual redirect) */
+    if(typeof window.showModal==='function'){
+      var _origShow=window.showModal;
+      window.showModal=function(){
+        dl.push({event:'cta_click',cta_source:'showModal'});
+        _origShow.apply(this,arguments);
+      };
+    }
+
+    /* Rewrite modal confirm buttons into real links with params.
+       Replaces the button with an <a> tag styled identically so
+       the browser treats it as a real navigation (no popup blocker). */
+    document.addEventListener('DOMContentLoaded',function(){
+      if(!cfg.ctaUrl) return;
+      var url=buildUrl(cfg.ctaUrl);
+
+      /* Find modal confirm buttons — only inside #redirectModal */
+      var modalBtns=document.querySelectorAll('#redirectModal button, #redirectModal [onclick*="closeModal"]');
+      modalBtns.forEach(function(btn){
+        /* Replace button with a real <a> link */
+        var a=document.createElement('a');
+        a.href=url;
+        a.target='_blank';
+        a.rel='noopener';
+        a.className=btn.className;
+        a.innerHTML=btn.innerHTML;
+        a.style.cssText=btn.style.cssText+';text-decoration:none;display:inline-block;text-align:center;';
+        a.addEventListener('click',function(){
+          dl.push({event:'cta_click',cta_url:this.href,cta_source:'modal_confirm'});
+          /* Update href at click time in case sessionStorage changed */
+          this.href=buildUrl(cfg.ctaUrl);
+        });
+        btn.parentNode.replaceChild(a,btn);
+      });
+
+      /* Turn showModal triggers into links that open the modal. */
+      var ctaBtns=document.querySelectorAll('[onclick*="showModal"]');
+      ctaBtns.forEach(function(btn){
+        btn.removeAttribute('onclick');
+        btn.addEventListener('click',function(e){
+          e.preventDefault();
+          dl.push({event:'cta_click',cta_source:'showModal'});
+          if(typeof _origShow==='function') _origShow();
+        });
+      });
+
+      /* Rewrite ALL outbound <a> links pointing to the CTA domain
+         so UTM params pass through even on pages that use plain links
+         instead of the showModal pattern. */
+      if(cfg.ctaUrl){
+        try{
+          var ctaDomain=new URL(cfg.ctaUrl).hostname;
+          document.querySelectorAll('a[href]').forEach(function(a){
+            try{
+              var h=new URL(a.href);
+              if(h.hostname===ctaDomain){
+                a.href=buildUrl(a.href);
+                a.addEventListener('click',function(){
+                  this.href=buildUrl(this.getAttribute('data-orig-href')||this.href);
+                  dl.push({event:'cta_click',cta_url:this.href,cta_source:'outbound_link'});
+                });
+                a.setAttribute('data-orig-href',a.href.split('?')[0]);
+              }
+            }catch(e){}
+          });
+        }catch(e){}
+      }
+    });
+
+    /* ---------- 3. Scroll depth ---------- */
+    var scrollFired={};
+    function checkScroll(){
+      var h=document.documentElement.scrollHeight-window.innerHeight;
+      if(h<=0) return;
+      var pct=Math.round(window.scrollY/h*100);
+      [25,50,75,100].forEach(function(t){
+        if(pct>=t&&!scrollFired[t]){
+          scrollFired[t]=true;
+          dl.push({event:'scroll_depth',depth:t});
+        }
+      });
+    }
+    window.addEventListener('scroll',checkScroll,{passive:true});
+
+    /* ---------- 4. Time on page ---------- */
+    [15,30,60].forEach(function(s){
+      setTimeout(function(){
+        dl.push({event:'time_on_page',seconds:s});
+      },s*1000);
+    });
+
+    /* ---------- 5. Page view ---------- */
+    dl.push({event:'lander_view',lander:cfg.lander||window.location.pathname});
+
+  }catch(e){/* tracking must never break the page */}
+})();
+</script>
+<!-- PPC-TRACKING-END -->
 </body>
 </html>
