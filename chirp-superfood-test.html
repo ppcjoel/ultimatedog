@@ -574,7 +574,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         firedEvents[name] = true;
         console.log('[Tracking]', name);
         if (config.taboolaPixelId && window._tfa) window._tfa.push({ notify: 'event', name: name, id: config.taboolaPixelId });
-        if (config.outbrainPixelId && window.obApi) window.obApi('track', name);
       }
       if ('IntersectionObserver' in window) {
         var sentinels = document.querySelectorAll('.scroll-sentinel');
@@ -609,9 +608,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         window._tfa = window._tfa || [];
         window._tfa.push({ notify: 'event', name: 'page_view', id: config.taboolaPixelId });
       }
-      if (config.outbrainPixelId) {
-        !function(_w,_d){ _w.OB_ADV_ID=config.outbrainPixelId; _w.obApi=function(){var a=arguments;_w.obApi.q=_w.obApi.q||[];_w.obApi.q.push(a)}; var s=_d.createElement('script');s.async=true;s.src='https://amplify.outbrain.com/cp/obtp.js'; var r=_d.getElementsByTagName('script')[0];r.parentNode.insertBefore(s,r); _w.obApi('track','PAGE_VIEW'); }(window,document);
-      }
+      /* Outbrain pixel now managed via GTM — Outbrain Pixel Base tag fires on All Pages */
     } catch (err) { console.warn('[Tracking Error]', err); }
   })();
   </script>
