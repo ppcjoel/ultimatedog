@@ -8,10 +8,13 @@
   <script>
   window.__landerConfig = {
     lander: 'chirp-superfood-test',
-    cta_url: 'https://ultimatedog.com/products/ultimate-dog-chirp-superfood-topper',
+    lander_version: '1.0',
     test_id: null,
+    ctaUrl: 'https://ultimatedog.com/products/ultimate-dog-chirp-superfood-topper',
     meta_pixel: '354269742673306',
-    ga4_id: 'G-6CPXN0S6Q1'
+    ga4_id: 'G-6CPXN0S6Q1',
+    taboolaPixelId: '',
+    outbrainPixelId: ''
   };
   </script>
 
@@ -66,6 +69,33 @@
         });
       }
     });
+    // Scroll depth and time-on-page events pushed to dataLayer for GTM
+    (function() {
+      var firedDL = {};
+      function pushEngagement(name) {
+        if (firedDL[name]) return;
+        firedDL[name] = true;
+        window.dataLayer.push({ event: name, content_name: window.__landerConfig ? window.__landerConfig.lander : document.title });
+      }
+      if ('IntersectionObserver' in window) {
+        document.addEventListener('DOMContentLoaded', function() {
+          var sents = document.querySelectorAll('.scroll-sentinel');
+          var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                var d = entry.target.getAttribute('data-depth');
+                if (d && d !== '0') pushEngagement('scroll_' + d);
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          sents.forEach(function(s) { obs.observe(s); });
+        });
+      }
+      setTimeout(function() { pushEngagement('time_15s'); }, 15000);
+      setTimeout(function() { pushEngagement('time_30s'); }, 30000);
+      setTimeout(function() { pushEngagement('time_60s'); }, 60000);
+    })();
   </script>
 
   <style>
@@ -322,6 +352,15 @@
     }
     .site-footer a { color: var(--color-footer-text); }
 
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-surface); border-top: 1px solid var(--color-border); padding: 12px 20px; z-index: 1000; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); }
+    .sticky-cta-inner { max-width: var(--content-width); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .sticky-cta-text { font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; color: var(--color-text); flex: 1; }
+    .sticky-cta .cta-button { font-size: 0.875rem; padding: 10px 20px; white-space: nowrap; }
+    .sticky-cta-close { background: none; border: none; font-size: 1.25rem; color: var(--color-muted); cursor: pointer; padding: 4px; line-height: 1; }
+    .scroll-sentinel { height: 1px; width: 1px; position: absolute; left: -9999px; pointer-events: none; }
+
+    @media print { .sticky-cta, .scroll-sentinel { display: none !important; } }
+
     @media (max-width: 640px) {
       h1 { font-size: 1.65rem; }
       h2 { font-size: 1.25rem; }
@@ -353,6 +392,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
+<div class="scroll-sentinel" data-depth="0" aria-hidden="true"></div>
+
 <main class="article-container">
 
   <div class="article-meta">
@@ -377,6 +418,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://ultimatedog.com/products/ultimate-dog-chirp-superfood-topper" class="cta-button" data-cta>See the Full CHIRP Ingredient Panel</a>
   </div>
 
+  <div class="scroll-sentinel" data-depth="25" aria-hidden="true"></div>
+
   <h2>Why Kibble Alone Isn't Enough</h2>
 
   <p>The pet food industry has made enormous strides in the last 20 years, but processing is still the Achilles heel. The high-heat extrusion process used to manufacture kibble destroys a significant portion of heat-sensitive nutrients &mdash; including probiotics, certain B vitamins, and delicate plant phytonutrients that play a critical role in immune regulation and cellular repair.</p>
@@ -399,6 +442,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>Probiotics (6 Canine-Specific Strains)</strong> &mdash; Targeted gut flora support using strains identified in healthy canine microbiome research, not generic human probiotic blends.</li>
   </ul>
 
+  <div class="scroll-sentinel" data-depth="50" aria-hidden="true"></div>
+
   <blockquote>
     "I started adding CHIRP to my 9-year-old Lab's food about six weeks ago. The change in his energy level and coat has been remarkable &mdash; my vet actually commented on it at his last checkup."
     <cite>&mdash; Karen D., verified UltimateDog customer</cite>
@@ -416,6 +461,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>This "topper approach" has practical advantages beyond convenience. Because the superfood blend is added fresh at mealtime, the active ingredients haven't been subjected to the extreme processing temperatures that degrade nutrients in kibble. The dog gets the stability and palatability of their familiar food, plus a concentrated dose of the whole-food nutrition that processing strips away.</p>
 
   <p>For multi-dog households, that simplicity matters even more. There's no need for breed-specific formulas or complex feeding schedules &mdash; CHIRP is appropriate for adult dogs of all breeds and sizes, with dosing adjusted by weight.</p>
+
+  <div class="scroll-sentinel" data-depth="75" aria-hidden="true"></div>
 
   <h2>What Dog Owners Are Reporting</h2>
 
@@ -435,6 +482,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://ultimatedog.com/products/ultimate-dog-chirp-superfood-topper" class="cta-button" data-cta>Shop CHIRP Superfood Topper</a>
   </div>
 
+  <div class="scroll-sentinel" data-depth="100" aria-hidden="true"></div>
+
   <div class="article-footer">
     <p style="font-family: var(--font-ui); font-size: 0.8rem; color: var(--color-muted); line-height: 1.6;">
       <strong>Disclaimer:</strong> This article is sponsored content produced in partnership with UltimateDog. The statements made herein have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Always consult your veterinarian before introducing new supplements to your dog's diet.
@@ -447,6 +496,100 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>&copy; 2026 Canine Nutrition Report. Sponsored content.</p>
   <p><a href="#">Privacy Policy</a> &bull; <a href="#">Terms</a> &bull; <a href="#">Contact</a></p>
 </footer>
+
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta-inner">
+      <span class="sticky-cta-text">CHIRP Superfood Topper &mdash; Vet-Backed Nutrition</span>
+      <a href="https://ultimatedog.com/products/ultimate-dog-chirp-superfood-topper" data-cta="true" class="cta-button">Shop Now</a>
+      <button class="sticky-cta-close" id="stickyCtaClose" aria-label="Close">&times;</button>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+    try {
+      var config = window.__landerConfig || {};
+      var params = new URLSearchParams(window.location.search);
+      var allParams = {};
+      params.forEach(function(value, key) { sessionStorage.setItem('lp_' + key, value); allParams[key] = value; });
+      if (config.lander) { sessionStorage.setItem('lp_lander', config.lander); allParams['lander'] = config.lander; }
+      if (config.lander_version) { sessionStorage.setItem('lp_lander_version', config.lander_version); allParams['lander_version'] = config.lander_version; }
+      if (config.test_id) { sessionStorage.setItem('lp_test_id', config.test_id); allParams['test_id'] = config.test_id; }
+      function getAllStoredParams() {
+        var stored = {};
+        for (var i = 0; i < sessionStorage.length; i++) {
+          var key = sessionStorage.key(i);
+          if (key && key.indexOf('lp_') === 0) stored[key.substring(3)] = sessionStorage.getItem(key);
+        }
+        return stored;
+      }
+      function buildCtaUrl() {
+        var base = config.ctaUrl || '';
+        var stored = getAllStoredParams();
+        var paramString = new URLSearchParams(stored).toString();
+        if (!paramString) return base;
+        return base + (base.indexOf('?') > -1 ? '&' : '?') + paramString;
+      }
+      document.addEventListener('click', function(e) {
+        var cta = e.target.closest('[data-cta]');
+        if (!cta) return;
+        e.preventDefault();
+        fireEvent('cta_click');
+        setTimeout(function() { window.location.href = buildCtaUrl(); }, 150);
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        var url = buildCtaUrl();
+        var ctas = document.querySelectorAll('[data-cta]');
+        for (var i = 0; i < ctas.length; i++) ctas[i].setAttribute('href', url);
+      });
+      var firedEvents = {};
+      function fireEvent(name) {
+        if (firedEvents[name]) return;
+        firedEvents[name] = true;
+        console.log('[Tracking]', name);
+        if (config.taboolaPixelId && window._tfa) window._tfa.push({ notify: 'event', name: name, id: config.taboolaPixelId });
+        if (config.outbrainPixelId && window.obApi) window.obApi('track', name);
+      }
+      if ('IntersectionObserver' in window) {
+        var sentinels = document.querySelectorAll('.scroll-sentinel');
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var depth = entry.target.getAttribute('data-depth');
+              if (depth && depth !== '0') fireEvent('scroll_' + depth);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        sentinels.forEach(function(s) { observer.observe(s); });
+      }
+      setTimeout(function() { fireEvent('time_15s'); }, 15000);
+      setTimeout(function() { fireEvent('time_30s'); }, 30000);
+      setTimeout(function() { fireEvent('time_60s'); }, 60000);
+      fireEvent('page_view');
+      var stickyCta = document.getElementById('stickyCta');
+      var stickyCtaClose = document.getElementById('stickyCtaClose');
+      var stickyDismissed = false;
+      if (stickyCta && stickyCtaClose) {
+        stickyCtaClose.addEventListener('click', function() { stickyCta.style.display = 'none'; stickyDismissed = true; });
+        window.addEventListener('scroll', function() {
+          if (stickyDismissed) return;
+          var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+          stickyCta.style.display = pct > 25 ? 'block' : 'none';
+        }, { passive: true });
+      }
+      if (config.taboolaPixelId) {
+        (function(t,f,a,x){ if(t.tfa)return;t.tfa=function(){t.tfa.q=t.tfa.q||[];t.tfa.q.push(arguments)}; var s=f.createElement('script');s.async=true;s.src=a+'?id='+x; var r=f.getElementsByTagName('script')[0];r.parentNode.insertBefore(s,r); })(window,document,'//cdn.taboola.com/libtrc/unip/'+config.taboolaPixelId+'/tfa.js',config.taboolaPixelId);
+        window._tfa = window._tfa || [];
+        window._tfa.push({ notify: 'event', name: 'page_view', id: config.taboolaPixelId });
+      }
+      if (config.outbrainPixelId) {
+        !function(_w,_d){ var OB_ADV_ID=config.outbrainPixelId; _w.obApi=function(){var a=arguments;_w.obApi.q=_w.obApi.q||[];_w.obApi.q.push(a)}; var s=_d.createElement('script');s.async=true;s.src='https://amplify.outbrain.com/cp/obtp.js'; var r=_d.getElementsByTagName('script')[0];r.parentNode.insertBefore(s,r); _w.obApi('track','PAGE_VIEW'); }(window,document);
+      }
+    } catch (err) { console.warn('[Tracking Error]', err); }
+  })();
+  </script>
 
 </body>
 </html>
