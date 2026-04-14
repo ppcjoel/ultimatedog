@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- PPC-TRACKING-START -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WJK46JRR');</script>
+<!-- End Google Tag Manager -->
+<!-- PPC-TRACKING-END -->
+<!-- PPC-TRACKING-START -->
+<script>
+window.__landerConfig = {
+  lander: "dashboard/index.html",
+  lander_version: "1.0",
+  test_id: "",
+  ctaUrl: "https://ultimatedog.com"
+};
+</script>
+<!-- PPC-TRACKING-END -->
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WJK46JRR');</script>
+<!-- End Google Tag Manager -->
+<title>UltimateDog Test Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FAFAFA;
+  --card: #FFFFFF;
+  --border: #E5E7EB;
+  --text: #111827;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  --accent: #E85D04;
+  --radius: 8px;
+  --radius-sm: 6px;
+  --mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── Top Bar ── */
+.topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-accent {
+  width: 4px;
+  height: 24px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.topbar-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.topbar-client {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover { filter: brightness(1.1); }
+
+.btn-secondary {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover { background: var(--bg); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 7px 10px;
+}
+.btn-ghost:hover { background: var(--bg); color: var(--text); }
+
+.btn-danger {
+  background: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+.btn-danger:hover { background: #FECACA; }
+
+.btn-sm { padding: 4px 10px; font-size: 12px; }
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 150ms ease;
+}
+.btn-icon:hover { background: var(--bg); color: var(--text); }
+
+/* ── Container ── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ── Status Badges ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-active { background: #ECFDF5; color: #065F46; }
+.badge-paused { background: #FFFBEB; color: #92400E; }
+.badge-complete { background: #F3F4F6; color: #6B7280; }
+
+/* ── Test Cards ── */
+.test-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.test-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 150ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.test-card:hover {
+  border-color: #D1D5DB;
+  box-shadow: var(--shadow-sm);
+}
+
+.test-card-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.test-card-info h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.test-card-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 12px;
+}
+
+.test-card-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.variant-count {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+/* ── Detail View ── */
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.detail-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detail-meta {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ── Variant Table ── */
+.variant-table {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.variant-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.variant-table th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.variant-table td {
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.variant-table tr:last-child td { border-bottom: none; }
+
+.variant-table .wt-input {
+  width: 52px;
+  text-align: center;
+  padding: 4px 2px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--mono);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--text);
+}
+.variant-table .wt-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232,93,4,0.1);
+}
+.wt-total {
+  font-size: 11px;
+  margin-left: 4px;
+}
+.wt-total.valid { color: var(--success, #22c55e); }
+.wt-total.invalid { color: var(--danger, #ef4444); }
+.wt-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.wt-bar .btn { flex-shrink: 0; }
+
+.mono {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.url-cell {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-btn-group {
+  display: flex;
+  gap: 4px;
+}
+
+/* ── UTM Reference ── */
+.utm-ref {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.utm-ref h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.utm-block {
+  margin-bottom: 16px;
+}
+
+.utm-block:last-child { margin-bottom: 0; }
+
+.utm-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.utm-value {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--bg);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  word-break: break-all;
+  line-height: 1.6;
+  position: relative;
+}
+
+.utm-value .copy-float {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+/* ── Modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.modal h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ── Form ── */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--text);
+  transition: border-color 150ms ease;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232,93,4,0.1);
+}
+
+.form-hint {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.variant-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.variant-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.variant-row .variant-letter {
+  width: 32px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.variant-row .form-select { flex: 1; }
+
+.variant-row .weight-input {
+  width: 64px;
+  flex-shrink: 0;
+  text-align: center;
+  padding: 8px 4px;
+  font-size: 13px;
+  font-family: var(--mono);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--text);
+}
+.variant-row .weight-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232,93,4,0.1);
+}
+.weight-suffix {
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  margin-left: -4px;
+}
+.weight-total {
+  font-size: 12px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+.weight-total.valid { color: #065F46; }
+.weight-total.invalid { color: #991B1B; }
+
+.variant-row .remove-variant {
+  width: 32px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  border: none;
+  background: none;
+  font-size: 18px;
+  border-radius: var(--radius-sm);
+}
+.variant-row .remove-variant:hover { background: #FEE2E2; color: #991B1B; }
+
+.test-id-preview {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.test-id-preview-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.test-id-preview-items {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.test-id-chip {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 2px 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Settings ── */
+.settings-section {
+  margin-bottom: 24px;
+}
+
+.settings-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.client-cards {
+  display: flex;
+  gap: 12px;
+}
+
+.client-card {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 150ms ease;
+  text-align: center;
+}
+
+.client-card.selected {
+  border-color: var(--accent);
+  background: rgba(232,93,4,0.03);
+}
+
+.client-card:hover:not(.selected) {
+  border-color: #D1D5DB;
+}
+
+.client-card-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.client-card-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.client-card-domain {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--text);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  z-index: 300;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 200ms ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Empty State ── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.3;
+}
+
+.empty-state h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.empty-state p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* ── Loading ── */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: var(--text-tertiary);
+  font-size: 13px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Status Select ── */
+.status-select {
+  appearance: none;
+  padding: 4px 24px 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  font-family: inherit;
+}
+
+.status-select.active { background-color: #ECFDF5; color: #065F46; border-color: #A7F3D0; }
+.status-select.paused { background-color: #FFFBEB; color: #92400E; border-color: #FDE68A; }
+.status-select.complete { background-color: #F3F4F6; color: #6B7280; border-color: #D1D5DB; }
+
+/* ── Back link ── */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  padding: 4px 0;
+}
+.back-link:hover { color: var(--text); }
+
+/* ── Confirm overlay ── */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 250;
+}
+
+.confirm-box {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  box-shadow: var(--shadow-lg);
+}
+
+.confirm-box h3 { font-size: 15px; margin-bottom: 8px; }
+.confirm-box p { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
+.confirm-box-actions { display: flex; justify-content: flex-end; gap: 8px; }
+</style>
+</head>
+<body>
+<!-- PPC-TRACKING-START -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJK46JRR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- PPC-TRACKING-END -->
+
+
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJK46JRR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="app"></div>
+<div id="modal-root"></div>
+<div id="toast" class="toast"></div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// Config
+// ══════════════════════════════════════════════════════════════
+const CLIENT = {
+  key: 'ultimatedog',
+  name: 'UltimateDog',
+  repo: 'ppcjoel/ultimatedog',
+  domain: 'caninewellnessjournal.com',
+  color: '#D4A574',
+  sevallaSiteId: 'b1aa656f-2834-4255-8335-b5f63689131b'
+};
+
+async function triggerDeploy() {
+  const apiKey = localStorage.getItem('sevalla_key');
+  if (!apiKey || !CLIENT.sevallaSiteId) return;
+  try {
+    const res = await fetch('https://api.sevalla.com/v2/static-sites/deployments', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ static_site_id: CLIENT.sevallaSiteId, branch: 'main' })
+    });
+    if (res.ok) toast('Deploy triggered');
+    else toast('Deploy failed');
+  } catch { toast('Deploy error'); }
+}
+
+// ══════════════════════════════════════════════════════════════
+// Site API — reads from deployed site (no auth needed)
+// ══════════════════════════════════════════════════════════════
+const SiteAPI = {
+  async listTests() {
+    try {
+      const res = await fetch('/tests/_index.json');
+      if (!res.ok) return null;
+      const names = await res.json();
+      const tests = [];
+      for (const name of names) {
+        try {
+          const r = await fetch(`/tests/${name}.json`);
+          if (r.ok) tests.push(await r.json());
+        } catch {}
+      }
+      return tests;
+    } catch { return null; }
+  }
+};
+
+// ══════════════════════════════════════════════════════════════
+// GitHub API — used for write operations (requires PAT)
+// ══════════════════════════════════════════════════════════════
+const GitHub = {
+  token: null,
+  repo: null,
+
+  headers() {
+    return {
+      'Authorization': `token ${this.token}`,
+      'Accept': 'application/vnd.github.v3+json'
+    };
+  },
+
+  async validateToken() {
+    try {
+      const res = await fetch(`https://api.github.com/repos/${this.repo}`, { headers: this.headers() });
+      return res.ok;
+    } catch { return false; }
+  },
+
+  async listPages() {
+    const res = await fetch(`https://api.github.com/repos/${this.repo}/contents/`, { headers: this.headers() });
+    if (!res.ok) throw new Error('Failed to list pages');
+    const items = await res.json();
+    return items.filter(f => f.type === 'file' && f.name.endsWith('.html') && !f.name.startsWith('_')).map(f => f.name);
+  },
+
+  async listTests() {
+    const res = await fetch(`https://api.github.com/repos/${this.repo}/contents/tests`, { headers: this.headers() });
+    if (res.status === 404) return [];
+    if (!res.ok) throw new Error('Failed to list tests');
+    const files = await res.json();
+    const tests = [];
+    for (const f of files) {
+      if (!f.name.endsWith('.json') || f.name.startsWith('_')) continue;
+      const detail = await fetch(f.url, { headers: this.headers() });
+      if (!detail.ok) continue;
+      const data = await detail.json();
+      const content = JSON.parse(atob(data.content));
+      content._sha = data.sha;
+      tests.push(content);
+    }
+    return tests;
+  },
+
+  async createTest(test) {
+    const body = {
+      message: `Create test: ${test.display_name}`,
+      content: btoa(JSON.stringify(test, null, 2)),
+      branch: 'main'
+    };
+    const res = await fetch(
+      `https://api.github.com/repos/${this.repo}/contents/tests/${test.name}.json`,
+      { method: 'PUT', headers: { ...this.headers(), 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+    );
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || 'Failed to create test');
+    }
+    return res.json();
+  },
+
+  async updateTest(test, sha) {
+    const body = {
+      message: `Update test: ${test.display_name}`,
+      content: btoa(JSON.stringify(test, null, 2)),
+      sha,
+      branch: 'main'
+    };
+    const res = await fetch(
+      `https://api.github.com/repos/${this.repo}/contents/tests/${test.name}.json`,
+      { method: 'PUT', headers: { ...this.headers(), 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+    );
+    if (!res.ok) throw new Error('Failed to update test');
+    const data = await res.json();
+    return data.content.sha;
+  },
+
+  async deleteTest(name, sha) {
+    const body = { message: `Delete test: ${name}`, sha, branch: 'main' };
+    const res = await fetch(
+      `https://api.github.com/repos/${this.repo}/contents/tests/${name}.json`,
+      { method: 'DELETE', headers: { ...this.headers(), 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
+    );
+    if (!res.ok) throw new Error('Failed to delete test');
+  },
+
+  async updateIndex(testNames) {
+    let sha;
+    try {
+      const res = await fetch(`https://api.github.com/repos/${this.repo}/contents/tests/_index.json`, { headers: this.headers() });
+      if (res.ok) sha = (await res.json()).sha;
+    } catch {}
+    const body = {
+      message: 'Update test index',
+      content: btoa(JSON.stringify(testNames, null, 2)),
+      branch: 'main'
+    };
+    if (sha) body.sha = sha;
+    await fetch(`https://api.github.com/repos/${this.repo}/contents/tests/_index.json`, {
+      method: 'PUT',
+      headers: { ...this.headers(), 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+  }
+};
+
+// ══════════════════════════════════════════════════════════════
+// UTM Generator
+// ══════════════════════════════════════════════════════════════
+const UTM = {
+  baseUrl(domain, page) {
+    return `https://${domain}/${page}`;
+  },
+  taboola(url) {
+    return `${url}?utm_source=taboola&utm_medium=paid&utm_campaign={campaign_name}&utm_content={title}&utm_term={site}`;
+  },
+  outbrain(url) {
+    return `${url}?utm_source=outbrain&utm_medium=paid&utm_campaign={{campaign_name}}&utm_content={{ad_title}}&utm_term={{publisher_name}}_{{section_name}}`;
+  }
+};
+
+// ══════════════════════════════════════════════════════════════
+// State
+// ══════════════════════════════════════════════════════════════
+const State = {
+  view: 'loading',       // loading | settings | dashboard | detail
+  clientKey: 'ultimatedog',
+  tests: [],
+  pages: [],
+  currentTest: null,
+  readOnly: true,        // true until PAT is provided
+  _sha: {}
+};
+
+// ══════════════════════════════════════════════════════════════
+// Helpers
+// ══════════════════════════════════════════════════════════════
+function $(sel) { return document.querySelector(sel); }
+function toast(msg) {
+  const el = $('#toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2000);
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    toast('Copied!');
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    toast('Copied!');
+  }
+}
+
+function variantLetter(i) {
+  return String.fromCharCode(97 + i);
+}
+
+function client() {
+  return CLIENT;
+}
+
+function formatTimestamp(ts) {
+  if (!ts) return '—';
+  const d = new Date(ts);
+  if (isNaN(d.getTime())) return ts;
+  const month = d.toLocaleString('en-US', { month: 'short' });
+  const day = d.getDate();
+  const year = d.getFullYear();
+  // If it's just a date (no time component), show date only
+  if (typeof ts === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(ts)) {
+    return `${month} ${day}, ${year}`;
+  }
+  const time = d.toLocaleString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+  return `${month} ${day}, ${year} ${time}`;
+}
+
+function nowISO() {
+  return new Date().toISOString();
+}
+
+// Prompt for PAT when a write operation is needed
+function ensureToken() {
+  return new Promise((resolve) => {
+    // Already have a token
+    if (GitHub.token) { resolve(true); return; }
+    // Try localStorage
+    const saved = localStorage.getItem('gh_token');
+    if (saved) {
+      GitHub.token = saved;
+      GitHub.repo = CLIENT.repo;
+      State.readOnly = false;
+      resolve(true);
+      return;
+    }
+    // Show inline token prompt
+    const overlay = document.createElement('div');
+    overlay.className = 'confirm-overlay';
+    overlay.innerHTML = `
+      <div class="confirm-box" style="max-width:440px;">
+        <h3>GitHub Token Required</h3>
+        <p>This action writes to the repo. Enter a GitHub PAT with <code>repo</code> scope.</p>
+        <input type="password" class="form-input" id="token-prompt-input" placeholder="ghp_..." style="margin-bottom:12px;">
+        <div id="token-prompt-error" style="color:#991B1B; font-size:12px; margin-bottom:8px; display:none;"></div>
+        <div class="confirm-box-actions">
+          <button class="btn btn-secondary" id="token-prompt-cancel">Cancel</button>
+          <button class="btn btn-primary" id="token-prompt-save">Connect</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    const input = overlay.querySelector('#token-prompt-input');
+    input.focus();
+    overlay.querySelector('#token-prompt-cancel').onclick = () => { overlay.remove(); resolve(false); };
+    overlay.querySelector('#token-prompt-save').onclick = async () => {
+      const token = input.value.trim();
+      const errEl = overlay.querySelector('#token-prompt-error');
+      if (!token) { errEl.textContent = 'Enter a token.'; errEl.style.display = 'block'; return; }
+      overlay.querySelector('#token-prompt-save').textContent = 'Validating...';
+      overlay.querySelector('#token-prompt-save').disabled = true;
+      GitHub.token = token;
+      GitHub.repo = CLIENT.repo;
+      const valid = await GitHub.validateToken();
+      if (!valid) {
+        errEl.textContent = 'Could not access the repo. Check your token.';
+        errEl.style.display = 'block';
+        GitHub.token = null;
+        overlay.querySelector('#token-prompt-save').textContent = 'Connect';
+        overlay.querySelector('#token-prompt-save').disabled = false;
+        return;
+      }
+      localStorage.setItem('gh_token', token);
+      State.readOnly = false;
+      overlay.remove();
+      resolve(true);
+    };
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') overlay.querySelector('#token-prompt-save').click();
+    });
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// Render Engine
+// ══════════════════════════════════════════════════════════════
+function render() {
+  const app = $('#app');
+  const c = client();
+
+  // Set accent color
+  if (c) {
+    document.documentElement.style.setProperty('--accent', c.color);
+  }
+
+  switch (State.view) {
+    case 'loading':
+      app.innerHTML = '<div class="loading"><div class="spinner"></div>Loading...</div>';
+      break;
+    case 'settings':
+      renderSettings(app);
+      break;
+    case 'dashboard':
+      renderDashboard(app);
+      break;
+    case 'detail':
+      renderDetail(app);
+      break;
+  }
+}
+
+// ── Settings ──
+function renderSettings(app) {
+  const savedToken = localStorage.getItem('gh_token') || '';
+  const savedSevalla = localStorage.getItem('sevalla_key') || '';
+
+  app.innerHTML = `
+    <div class="container" style="max-width:480px; margin-top:80px;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <div style="width:8px; height:24px; border-radius:2px; background:${CLIENT.color};"></div>
+        <h2 style="font-size:20px;">UltimateDog Test Manager</h2>
+      </div>
+      <p style="font-size:13px; color:var(--text-secondary); margin-bottom:32px;">${CLIENT.domain} &mdash; connect GitHub to create and edit tests, or view existing tests without a token.</p>
+
+      <div class="settings-section">
+        <h3>GitHub Token</h3>
+        <div class="form-group">
+          <input type="password" class="form-input" id="settings-token" value="${savedToken}" placeholder="ghp_...">
+          <div class="form-hint">Needs <code>repo</code> scope. Stored in your browser only. Optional for viewing.</div>
+        </div>
+      </div>
+
+      <div class="settings-section" style="margin-top:20px;">
+        <h3>Sevalla API Key</h3>
+        <div class="form-group">
+          <input type="password" class="form-input" id="settings-sevalla" value="${savedSevalla}" placeholder="svl_...">
+          <div class="form-hint">Enables auto-deploy when tests are updated. Stored in your browser only.</div>
+        </div>
+      </div>
+
+      <div id="settings-error" style="color:#991B1B; font-size:13px; margin-bottom:12px; display:none;"></div>
+
+      <button class="btn btn-primary" style="width:100%;" id="settings-save">Connect & Continue</button>
+      <button class="btn btn-secondary" style="width:100%; margin-top:8px;" id="settings-skip">View Tests Without Token</button>
+    </div>
+  `;
+
+  $('#settings-save').onclick = async () => {
+    const token = $('#settings-token').value.trim();
+    const errEl = $('#settings-error');
+
+    if (!token) { errEl.textContent = 'Enter a GitHub token.'; errEl.style.display = 'block'; return; }
+
+    errEl.style.display = 'none';
+    $('#settings-save').textContent = 'Validating...';
+    $('#settings-save').disabled = true;
+
+    GitHub.token = token;
+    GitHub.repo = CLIENT.repo;
+
+    const valid = await GitHub.validateToken();
+    if (!valid) {
+      errEl.textContent = 'Could not access the repo. Check your token and permissions.';
+      errEl.style.display = 'block';
+      $('#settings-save').textContent = 'Connect & Continue';
+      $('#settings-save').disabled = false;
+      return;
+    }
+
+    localStorage.setItem('gh_token', token);
+    const sevKey = $('#settings-sevalla').value.trim();
+    if (sevKey) localStorage.setItem('sevalla_key', sevKey);
+    State.readOnly = false;
+    await loadDashboard();
+  };
+
+  $('#settings-skip').onclick = () => {
+    const sevKey = $('#settings-sevalla').value.trim();
+    if (sevKey) localStorage.setItem('sevalla_key', sevKey);
+    loadDashboard();
+  };
+}
+
+// ── Dashboard ──
+async function loadDashboard() {
+  State.view = 'loading';
+  render();
+  try {
+    if (GitHub.token) {
+      // Full mode: use GitHub API (shows unpublished changes)
+      const [tests, pages] = await Promise.all([GitHub.listTests(), GitHub.listPages()]);
+      State.tests = tests;
+      State.pages = pages;
+      State.readOnly = false;
+    } else {
+      // Read-only: fetch from deployed site
+      const tests = await SiteAPI.listTests();
+      State.tests = tests || [];
+      State.pages = [];
+    }
+    State.view = 'dashboard';
+  } catch (e) {
+    State.view = 'dashboard';
+    State.tests = [];
+    State.pages = [];
+    console.error(e);
+  }
+  render();
+}
+
+function renderDashboard(app) {
+  const c = client();
+  const tests = State.tests;
+
+  app.innerHTML = `
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-accent"></div>
+        <span class="topbar-title">Test Manager</span>
+        <span class="topbar-client">${c.name}</span>
+      </div>
+      <div class="topbar-right">
+        <button class="btn btn-secondary btn-sm" id="btn-refresh" title="Refresh">&#x21bb; Refresh</button>
+        <button class="btn btn-primary btn-sm" id="btn-new-test">+ New Test</button>
+        <button class="btn-icon" id="btn-settings" title="Settings">&#9881;</button>
+      </div>
+    </div>
+    <div class="container">
+      ${tests.length === 0 ? `
+        <div class="empty-state">
+          <div class="empty-state-icon">&#128202;</div>
+          <h3>No tests yet</h3>
+          <p>Create your first advertorial page test to get started.</p>
+          <button class="btn btn-primary" id="btn-new-test-empty">+ New Test</button>
+        </div>
+      ` : `
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-top:4px;">
+          <div style="font-size:13px; color:var(--text-secondary);">${tests.length} test${tests.length !== 1 ? 's' : ''} &middot; ${State.pages.length} pages deployed</div>
+        </div>
+        <div class="test-grid">
+          ${tests.map(t => `
+            <div class="test-card" data-test="${t.name}">
+              <div class="test-card-left">
+                <div>
+                  <div class="test-card-info">
+                    <h3>${t.display_name}</h3>
+                  </div>
+                  <div class="test-card-meta">
+                    <span class="mono">${t.name}</span>
+                    <span>Created ${formatTimestamp(t.created)}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="test-card-right">
+                <span class="variant-count">${t.variants.length} variant${t.variants.length !== 1 ? 's' : ''}</span>
+                <span class="badge badge-${t.status}">${t.status}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `}
+    </div>
+  `;
+
+  // Events
+  document.querySelectorAll('.test-card').forEach(card => {
+    card.onclick = () => {
+      const name = card.dataset.test;
+      State.currentTest = State.tests.find(t => t.name === name);
+      State.view = 'detail';
+      render();
+    };
+  });
+
+  const openNewTestWithAuth = async () => {
+    const hasToken = await ensureToken();
+    if (!hasToken) return;
+    // Fetch pages list if we don't have it yet
+    if (State.pages.length === 0) {
+      try { State.pages = await GitHub.listPages(); } catch {}
+    }
+    openNewTestModal();
+  };
+  const newTestBtn = $('#btn-new-test') || $('#btn-new-test-empty');
+  if (newTestBtn) newTestBtn.onclick = openNewTestWithAuth;
+  const newTestEmpty = $('#btn-new-test-empty');
+  if (newTestEmpty) newTestEmpty.onclick = openNewTestWithAuth;
+
+  if ($('#btn-refresh')) $('#btn-refresh').onclick = () => loadDashboard();
+  if ($('#btn-settings')) $('#btn-settings').onclick = () => { State.view = 'settings'; render(); };
+}
+
+// ── Detail View ──
+function renderDetail(app) {
+  const t = State.currentTest;
+  const c = client();
+  if (!t) { State.view = 'dashboard'; render(); return; }
+
+  app.innerHTML = `
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-accent"></div>
+        <span class="topbar-title">Test Manager</span>
+        <span class="topbar-client">${c.name}</span>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="btn-settings" title="Settings">&#9881;</button>
+      </div>
+    </div>
+    <div class="container">
+      <a class="back-link" id="btn-back">&larr; All Tests</a>
+
+      <div class="detail-header">
+        <div>
+          <div class="detail-title">${t.display_name}</div>
+          <div class="detail-meta"><span class="mono">${t.name}</span> &middot; Created ${formatTimestamp(t.created)}</div>
+        </div>
+        <div class="detail-actions">
+          <select class="status-select ${t.status}" id="status-select">
+            <option value="active" ${t.status === 'active' ? 'selected' : ''}>Active</option>
+            <option value="paused" ${t.status === 'paused' ? 'selected' : ''}>Paused</option>
+            <option value="complete" ${t.status === 'complete' ? 'selected' : ''}>Complete</option>
+          </select>
+          <button class="btn btn-danger btn-sm" id="btn-delete">Delete</button>
+        </div>
+      </div>
+
+      <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); padding:12px 16px; margin-bottom:20px; display:flex; align-items:center; gap:12px;">
+        <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; color:var(--text-secondary); white-space:nowrap;">Split URL</span>
+        <code id="split-url" style="flex:1; font-size:12px; color:var(--text); word-break:break-all;">https://${c.domain}/split/?t=${t.name}</code>
+        <button class="btn btn-primary btn-sm" id="copy-split-url">Copy</button>
+      </div>
+
+      <div class="variant-table">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:50px;">Var</th>
+              <th style="width:70px;">Traffic</th>
+              <th>Page</th>
+              <th>test_id</th>
+              <th>Added</th>
+              <th>Live URL</th>
+              <th style="width:180px;">Copy Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${t.variants.map(v => {
+              const url = UTM.baseUrl(c.domain, v.page);
+              return `
+                <tr>
+                  <td><strong>${v.id.toUpperCase()}</strong></td>
+                  <td><input type="number" class="wt-input" data-var="${v.id}" value="${v.weight || 0}" min="0" max="100">%</td>
+                  <td class="mono">${v.page}</td>
+                  <td><span class="mono">${v.test_id}</span></td>
+                  <td style="font-size:11px; color:var(--text-secondary); white-space:nowrap;">${formatTimestamp(v.added)}</td>
+                  <td class="url-cell" title="${url}">${url}</td>
+                  <td>
+                    <div class="copy-btn-group">
+                      <button class="btn btn-secondary btn-sm copy-url" data-url="${url}">URL</button>
+                      <button class="btn btn-secondary btn-sm copy-taboola" data-url="${url}">Taboola</button>
+                      <button class="btn btn-secondary btn-sm copy-outbrain" data-url="${url}">Outbrain</button>
+                    </div>
+                  </td>
+                </tr>
+              `;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="wt-bar">
+        <button class="btn btn-primary btn-sm" id="btn-save-weights" disabled>Save Weights</button>
+        <span class="wt-total" id="wt-total"></span>
+        <span style="flex:1;"></span>
+        <button class="btn btn-secondary btn-sm" id="btn-add-variant">+ Add Variant</button>
+      </div>
+
+      <div class="utm-ref">
+        <h4>Ad Platform URLs</h4>
+        <p style="font-size:12px; color:var(--text-secondary); margin-bottom:16px;">
+          Use the split URL as your ad destination. It auto-routes visitors to variants by weight. Platform macros auto-populate in the ad platform.
+        </p>
+        <div class="utm-block">
+          <div class="utm-label">Taboola</div>
+          <div class="utm-value">
+            ${UTM.taboola(`https://${c.domain}/split/?t=${t.name}`)}
+            <button class="btn btn-secondary btn-sm copy-float" id="copy-utm-taboola">Copy</button>
+          </div>
+        </div>
+        <div class="utm-block">
+          <div class="utm-label">Outbrain</div>
+          <div class="utm-value">
+            ${UTM.outbrain(`https://${c.domain}/split/?t=${t.name}`)}
+            <button class="btn btn-secondary btn-sm copy-float" id="copy-utm-outbrain">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Events
+  $('#btn-back').onclick = () => { State.view = 'dashboard'; render(); };
+  if ($('#btn-settings')) $('#btn-settings').onclick = () => { State.view = 'settings'; render(); };
+
+  // Split URL copy
+  $('#copy-split-url').onclick = () => copyText($('#split-url').textContent);
+
+  // Copy buttons
+  document.querySelectorAll('.copy-url').forEach(btn => {
+    btn.onclick = (e) => { e.stopPropagation(); copyText(btn.dataset.url); };
+  });
+  document.querySelectorAll('.copy-taboola').forEach(btn => {
+    btn.onclick = (e) => { e.stopPropagation(); copyText(UTM.taboola(btn.dataset.url)); };
+  });
+  document.querySelectorAll('.copy-outbrain').forEach(btn => {
+    btn.onclick = (e) => { e.stopPropagation(); copyText(UTM.outbrain(btn.dataset.url)); };
+  });
+  const splitBase = `https://${c.domain}/split/?t=${t.name}`;
+  if ($('#copy-utm-taboola')) $('#copy-utm-taboola').onclick = () => copyText(UTM.taboola(splitBase));
+  if ($('#copy-utm-outbrain')) $('#copy-utm-outbrain').onclick = () => copyText(UTM.outbrain(splitBase));
+
+  // Inline weight editing
+  const wtInputs = document.querySelectorAll('.wt-input');
+  const wtTotal = $('#wt-total');
+  const btnSave = $('#btn-save-weights');
+
+  function updateWeightTotal() {
+    let sum = 0;
+    wtInputs.forEach(inp => { sum += parseInt(inp.value) || 0; });
+    wtTotal.textContent = `Total: ${sum}%`;
+    const valid = sum === 100;
+    wtTotal.className = 'wt-total ' + (valid ? 'valid' : 'invalid');
+    btnSave.disabled = !valid;
+    return sum;
+  }
+  updateWeightTotal();
+
+  wtInputs.forEach(inp => {
+    inp.addEventListener('input', updateWeightTotal);
+  });
+
+  btnSave.onclick = async () => {
+    const hasToken = await ensureToken();
+    if (!hasToken) return;
+    let sum = 0;
+    const newWeights = {};
+    wtInputs.forEach(inp => {
+      const w = parseInt(inp.value) || 0;
+      newWeights[inp.dataset.var] = w;
+      sum += w;
+    });
+    if (sum !== 100) { toast('Weights must total 100%'); return; }
+
+    if (!t._sha) {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${GitHub.repo}/contents/tests/${t.name}.json`, { headers: GitHub.headers() });
+        if (res.ok) t._sha = (await res.json()).sha;
+      } catch {}
+    }
+
+    t.variants.forEach(v => {
+      if (newWeights[v.id] !== undefined) v.weight = newWeights[v.id];
+    });
+
+    try {
+      const cleanTest = { ...t };
+      const sha = cleanTest._sha;
+      delete cleanTest._sha;
+      const newSha = await GitHub.updateTest(cleanTest, sha);
+      t._sha = newSha;
+      toast('Weights saved');
+      triggerDeploy();
+    } catch (err) {
+      toast('Failed to save weights');
+      console.error(err);
+    }
+  };
+
+  // Add variant
+  $('#btn-add-variant').onclick = async () => {
+    const hasToken = await ensureToken();
+    if (!hasToken) return;
+    if (State.pages.length === 0) {
+      try { State.pages = await GitHub.listPages(); } catch {}
+    }
+    openAddVariantModal(t);
+  };
+
+  // Status change
+  $('#status-select').onchange = async (e) => {
+    const newStatus = e.target.value;
+    const oldStatus = t.status;
+    const hasToken = await ensureToken();
+    if (!hasToken) { e.target.value = oldStatus; return; }
+
+    // If we loaded read-only, we need the sha from GitHub
+    if (!t._sha) {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${GitHub.repo}/contents/tests/${t.name}.json`, { headers: GitHub.headers() });
+        if (res.ok) t._sha = (await res.json()).sha;
+      } catch {}
+    }
+
+    t.status = newStatus;
+    e.target.className = `status-select ${newStatus}`;
+    try {
+      const cleanTest = { ...t };
+      const sha = cleanTest._sha;
+      delete cleanTest._sha;
+      const newSha = await GitHub.updateTest(cleanTest, sha);
+      t._sha = newSha;
+      toast(`Status updated to ${newStatus}`);
+      triggerDeploy();
+    } catch (err) {
+      toast('Failed to update status');
+      t.status = oldStatus;
+      e.target.value = oldStatus;
+      e.target.className = `status-select ${oldStatus}`;
+      console.error(err);
+    }
+  };
+
+  // Delete
+  $('#btn-delete').onclick = async () => {
+    const hasToken = await ensureToken();
+    if (!hasToken) return;
+
+    // If we loaded read-only, we need the sha from GitHub
+    if (!t._sha) {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${GitHub.repo}/contents/tests/${t.name}.json`, { headers: GitHub.headers() });
+        if (res.ok) t._sha = (await res.json()).sha;
+      } catch {}
+    }
+
+    const overlay = document.createElement('div');
+    overlay.className = 'confirm-overlay';
+    overlay.innerHTML = `
+      <div class="confirm-box">
+        <h3>Delete "${t.display_name}"?</h3>
+        <p>This will remove the test config from the repo. The advertorial pages themselves will not be affected.</p>
+        <div class="confirm-box-actions">
+          <button class="btn btn-secondary" id="confirm-cancel">Cancel</button>
+          <button class="btn btn-danger" id="confirm-delete">Delete Test</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    overlay.querySelector('#confirm-cancel').onclick = () => overlay.remove();
+    overlay.querySelector('#confirm-delete').onclick = async () => {
+      overlay.remove();
+      try {
+        await GitHub.deleteTest(t.name, t._sha);
+        // Update the index
+        const remaining = State.tests.filter(x => x.name !== t.name).map(x => x.name);
+        await GitHub.updateIndex(remaining);
+        toast('Test deleted');
+        triggerDeploy();
+        await loadDashboard();
+      } catch (err) {
+        toast('Failed to delete test');
+        console.error(err);
+      }
+    };
+  };
+}
+
+// ── New Test Modal ──
+function openNewTestModal() {
+  const modal = $('#modal-root');
+  let variantCount = 2;
+
+  function getVariantRowsHTML(count) {
+    const defaultWeight = Math.floor(100 / count);
+    const remainder = 100 - (defaultWeight * count);
+    let html = '';
+    for (let i = 0; i < count; i++) {
+      const w = defaultWeight + (i === 0 ? remainder : 0);
+      html += `
+        <div class="variant-row">
+          <div class="variant-letter">${variantLetter(i).toUpperCase()}</div>
+          <select class="form-select variant-page-select">
+            <option value="">Select a page...</option>
+            ${State.pages.map(p => `<option value="${p}">${p}</option>`).join('')}
+          </select>
+          <input type="number" class="weight-input" min="1" max="99" value="${w}">
+          <span class="weight-suffix">%</span>
+          ${count > 2 ? `<button class="remove-variant" data-idx="${i}">&times;</button>` : '<div style="width:32px"></div>'}
+        </div>
+      `;
+    }
+    html += '<div class="weight-total" id="weight-total"></div>';
+    return html;
+  }
+
+  function updateWeightTotal() {
+    const weights = modal.querySelectorAll('.weight-input');
+    const totalEl = modal.querySelector('#weight-total');
+    if (!totalEl) return;
+    let sum = 0;
+    weights.forEach(w => sum += parseInt(w.value) || 0);
+    if (sum === 100) {
+      totalEl.textContent = 'Total: 100%';
+      totalEl.className = 'weight-total valid';
+    } else {
+      totalEl.textContent = `Total: ${sum}% (must equal 100%)`;
+      totalEl.className = 'weight-total invalid';
+    }
+  }
+
+  function updatePreview() {
+    const name = modal.querySelector('#new-test-name')?.value.trim() || '';
+    const selects = modal.querySelectorAll('.variant-page-select');
+    const preview = modal.querySelector('#test-id-preview-items');
+    if (!preview) return;
+
+    updateWeightTotal();
+
+    if (!name) {
+      preview.innerHTML = '<span style="color:var(--text-tertiary); font-size:12px;">Enter a test name to see preview</span>';
+      return;
+    }
+
+    let html = '';
+    selects.forEach((sel, i) => {
+      const tid = `${name}_${variantLetter(i)}`;
+      html += `<span class="test-id-chip">${tid}</span>`;
+    });
+    preview.innerHTML = html;
+  }
+
+  function renderModal() {
+    modal.innerHTML = `
+      <div class="modal-overlay open">
+        <div class="modal">
+          <h2>New Test</h2>
+
+          <div class="form-group">
+            <label class="form-label">Test Name (slug)</label>
+            <input type="text" class="form-input" id="new-test-name" placeholder="e.g. kbh, muf_cta, pb_angle" autocomplete="off">
+            <div class="form-hint">Lowercase, underscores only. This becomes the test_id prefix.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Display Name</label>
+            <input type="text" class="form-input" id="new-test-display" placeholder="e.g. Keto Bread Headlines">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Variants</label>
+            <div class="variant-rows" id="variant-rows">
+              ${getVariantRowsHTML(variantCount)}
+            </div>
+            <button class="btn btn-secondary btn-sm" style="margin-top:8px;" id="btn-add-variant">+ Add Variant</button>
+          </div>
+
+          <div class="test-id-preview">
+            <div class="test-id-preview-label">test_id Preview</div>
+            <div class="test-id-preview-items" id="test-id-preview-items"></div>
+          </div>
+
+          <div id="new-test-error" style="color:#991B1B; font-size:13px; margin-top:12px; display:none;"></div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" id="modal-cancel">Cancel</button>
+            <button class="btn btn-primary" id="modal-create">Create Test</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Events
+    modal.querySelector('#modal-cancel').onclick = () => closeModal();
+    modal.querySelector('.modal-overlay').onclick = (e) => {
+      if (e.target === e.currentTarget) closeModal();
+    };
+
+    modal.querySelector('#new-test-name').oninput = (e) => {
+      e.target.value = e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, '');
+      updatePreview();
+    };
+
+    modal.querySelector('#btn-add-variant').onclick = () => {
+      variantCount++;
+      modal.querySelector('#variant-rows').innerHTML = getVariantRowsHTML(variantCount);
+      bindVariantEvents();
+      updatePreview();
+    };
+
+    modal.querySelector('#modal-create').onclick = createTest;
+
+    bindVariantEvents();
+    updatePreview();
+  }
+
+  function bindVariantEvents() {
+    modal.querySelectorAll('.remove-variant').forEach(btn => {
+      btn.onclick = () => {
+        variantCount--;
+        modal.querySelector('#variant-rows').innerHTML = getVariantRowsHTML(variantCount);
+        bindVariantEvents();
+        updatePreview();
+      };
+    });
+    modal.querySelectorAll('.variant-page-select').forEach(sel => {
+      sel.onchange = updatePreview;
+    });
+    modal.querySelectorAll('.weight-input').forEach(inp => {
+      inp.oninput = updateWeightTotal;
+    });
+  }
+
+  async function createTest() {
+    const name = modal.querySelector('#new-test-name').value.trim();
+    const displayName = modal.querySelector('#new-test-display').value.trim();
+    const selects = modal.querySelectorAll('.variant-page-select');
+    const errEl = modal.querySelector('#new-test-error');
+
+    // Validate
+    if (!name) { errEl.textContent = 'Test name is required.'; errEl.style.display = 'block'; return; }
+    if (!/^[a-z0-9_]+$/.test(name)) { errEl.textContent = 'Name must be lowercase letters, numbers, and underscores only.'; errEl.style.display = 'block'; return; }
+    if (!displayName) { errEl.textContent = 'Display name is required.'; errEl.style.display = 'block'; return; }
+    if (State.tests.some(t => t.name === name)) { errEl.textContent = 'A test with this name already exists.'; errEl.style.display = 'block'; return; }
+
+    const weights = modal.querySelectorAll('.weight-input');
+    let weightSum = 0;
+    weights.forEach(w => weightSum += parseInt(w.value) || 0);
+    if (weightSum !== 100) { errEl.textContent = `Traffic weights must total 100% (currently ${weightSum}%).`; errEl.style.display = 'block'; return; }
+
+    const variants = [];
+    const usedPages = new Set();
+    for (let i = 0; i < selects.length; i++) {
+      const page = selects[i].value;
+      if (!page) { errEl.textContent = `Select a page for variant ${variantLetter(i).toUpperCase()}.`; errEl.style.display = 'block'; return; }
+      if (usedPages.has(page)) { errEl.textContent = `Page "${page}" is used in multiple variants.`; errEl.style.display = 'block'; return; }
+      usedPages.add(page);
+      variants.push({
+        id: variantLetter(i),
+        page,
+        test_id: `${name}_${variantLetter(i)}`,
+        weight: parseInt(weights[i].value),
+        added: nowISO()
+      });
+    }
+
+    errEl.style.display = 'none';
+    const createBtn = modal.querySelector('#modal-create');
+    createBtn.textContent = 'Creating...';
+    createBtn.disabled = true;
+
+    const test = {
+      name,
+      display_name: displayName,
+      client: CLIENT.key,
+      status: 'active',
+      created: nowISO(),
+      variants
+    };
+
+    try {
+      await GitHub.createTest(test);
+      // Update the index with all test names
+      const allNames = [...State.tests.map(t => t.name), test.name];
+      await GitHub.updateIndex(allNames);
+      closeModal();
+      toast('Test created!');
+      triggerDeploy();
+      await loadDashboard();
+    } catch (err) {
+      errEl.textContent = err.message;
+      errEl.style.display = 'block';
+      createBtn.textContent = 'Create Test';
+      createBtn.disabled = false;
+    }
+  }
+
+  renderModal();
+
+  // Focus name input
+  setTimeout(() => modal.querySelector('#new-test-name')?.focus(), 100);
+}
+
+// ── Add Variant Modal ──
+function openAddVariantModal(test) {
+  const modal = $('#modal-root');
+  const existingPages = new Set(test.variants.map(v => v.page));
+  const nextLetter = variantLetter(test.variants.length);
+
+  modal.innerHTML = `
+    <div class="modal-overlay open">
+      <div class="modal">
+        <h2>Add Variant to "${test.display_name}"</h2>
+        <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px;">
+          This will be variant <strong>${nextLetter.toUpperCase()}</strong> with test_id <span class="mono">${test.name}_${nextLetter}</span>.
+          You'll need to redistribute traffic weights after adding.
+        </p>
+
+        <div class="form-group">
+          <label class="form-label">Page</label>
+          <select class="form-select" id="add-variant-page">
+            <option value="">Select a page...</option>
+            ${State.pages.filter(p => !existingPages.has(p)).map(p => `<option value="${p}">${p}</option>`).join('')}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Traffic Weight (%)</label>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <input type="number" class="form-input" id="add-variant-weight" min="1" max="99" value="0" style="width:80px; text-align:center; font-family:var(--mono);">
+            <span style="font-size:12px; color:var(--text-secondary);">%</span>
+          </div>
+          <div class="form-hint">Current total: ${test.variants.reduce((s, v) => s + (v.weight || 0), 0)}%. Adjust existing weights after adding so all variants total 100%.</div>
+        </div>
+
+        <div id="add-variant-error" style="color:#991B1B; font-size:13px; margin-top:12px; display:none;"></div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" id="modal-cancel">Cancel</button>
+          <button class="btn btn-primary" id="modal-add">Add Variant</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  modal.querySelector('#modal-cancel').onclick = () => closeModal();
+  modal.querySelector('.modal-overlay').onclick = (e) => {
+    if (e.target === e.currentTarget) closeModal();
+  };
+
+  modal.querySelector('#modal-add').onclick = async () => {
+    const page = modal.querySelector('#add-variant-page').value;
+    const weight = parseInt(modal.querySelector('#add-variant-weight').value) || 0;
+    const errEl = modal.querySelector('#add-variant-error');
+
+    if (!page) { errEl.textContent = 'Select a page.'; errEl.style.display = 'block'; return; }
+    if (weight < 0 || weight > 99) { errEl.textContent = 'Weight must be between 0 and 99.'; errEl.style.display = 'block'; return; }
+
+    errEl.style.display = 'none';
+    const addBtn = modal.querySelector('#modal-add');
+    addBtn.textContent = 'Adding...';
+    addBtn.disabled = true;
+
+    // Get sha if needed
+    if (!test._sha) {
+      try {
+        const res = await fetch(`https://api.github.com/repos/${GitHub.repo}/contents/tests/${test.name}.json`, { headers: GitHub.headers() });
+        if (res.ok) test._sha = (await res.json()).sha;
+      } catch {}
+    }
+
+    const newVariant = {
+      id: nextLetter,
+      page,
+      test_id: `${test.name}_${nextLetter}`,
+      weight,
+      added: nowISO()
+    };
+
+    test.variants.push(newVariant);
+
+    try {
+      const cleanTest = { ...test };
+      const sha = cleanTest._sha;
+      delete cleanTest._sha;
+      const newSha = await GitHub.updateTest(cleanTest, sha);
+      test._sha = newSha;
+      closeModal();
+      toast(`Variant ${nextLetter.toUpperCase()} added!`);
+      triggerDeploy();
+      State.currentTest = test;
+      render();
+    } catch (err) {
+      test.variants.pop();
+      errEl.textContent = err.message;
+      errEl.style.display = 'block';
+      addBtn.textContent = 'Add Variant';
+      addBtn.disabled = false;
+    }
+  };
+
+  setTimeout(() => modal.querySelector('#add-variant-page')?.focus(), 100);
+}
+
+function closeModal() {
+  const modal = $('#modal-root');
+  const overlay = modal.querySelector('.modal-overlay');
+  if (overlay) overlay.classList.remove('open');
+  setTimeout(() => { modal.innerHTML = ''; }, 150);
+}
+
+// ══════════════════════════════════════════════════════════════
+// Init
+// ══════════════════════════════════════════════════════════════
+async function init() {
+  // Silently load saved token if available
+  const token = localStorage.getItem('gh_token');
+  if (token) {
+    GitHub.token = token;
+    GitHub.repo = CLIENT.repo;
+    State.readOnly = false;
+  }
+
+  // Try loading from deployed site (works without token)
+  if (!GitHub.token) {
+    const tests = await SiteAPI.listTests();
+    if (tests !== null) {
+      State.tests = tests;
+      State.view = 'dashboard';
+      render();
+      return;
+    }
+    // No index file yet and no token — show settings
+    State.view = 'settings';
+    render();
+    return;
+  }
+
+  // Have token — full load via GitHub API
+  await loadDashboard();
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = $('#modal-root');
+    if (modal.innerHTML) { closeModal(); return; }
+    const confirm = document.querySelector('.confirm-overlay');
+    if (confirm) { confirm.remove(); return; }
+    if (State.view === 'detail') { State.view = 'dashboard'; render(); }
+  }
+});
+
+init();
+</script>
+
+
+
+
+
+<!-- PPC-TRACKING-START -->
+<script>
+(function(){
+  try{
+    var dl=window.dataLayer=window.dataLayer||[];
+    var cfg=window.__landerConfig||{};
+
+    /* ---------- 1. Parameter capture ---------- */
+    var sp=new URLSearchParams(window.location.search);
+    sp.forEach(function(v,k){
+      try{sessionStorage.setItem('lp_'+k,v)}catch(e){}
+    });
+    // Enrichment from config
+    ['lander','lander_version','test_id'].forEach(function(k){
+      if(cfg[k])try{sessionStorage.setItem('lp_'+k,cfg[k])}catch(e){}
+    });
+
+    /* Helper: collect all lp_ params */
+    function getLpParams(){
+      var p={};
+      for(var i=0;i<sessionStorage.length;i++){
+        var k=sessionStorage.key(i);
+        if(k&&k.indexOf('lp_')===0) p[k.slice(3)]=sessionStorage.getItem(k);
+      }
+      return p;
+    }
+
+    function buildUrl(base){
+      var p=getLpParams();
+      var u=new URL(base);
+      Object.keys(p).forEach(function(k){u.searchParams.set(k,p[k])});
+      return u.toString();
+    }
+
+    /* ---------- 2. CTA interception ---------- */
+
+    /* data-cta links/buttons — turn into real links with params */
+    document.addEventListener('click',function(e){
+      var el=e.target.closest('[data-cta]');
+      if(!el) return;
+      e.preventDefault();
+      var base=el.getAttribute('data-cta')||cfg.ctaUrl||el.href||'';
+      if(base){
+        var url=buildUrl(base);
+        dl.push({event:'cta_click',cta_url:url});
+        window.location.href=url;
+      }
+    });
+
+    /* Patch showModal — only fires event, does NOT open URL
+       (the modal "Proceed to Shop" button handles the actual redirect) */
+    if(typeof window.showModal==='function'){
+      var _origShow=window.showModal;
+      window.showModal=function(){
+        dl.push({event:'cta_click',cta_source:'showModal'});
+        _origShow.apply(this,arguments);
+      };
+    }
+
+    /* Rewrite modal confirm buttons into real links with params.
+       Replaces the button with an <a> tag styled identically so
+       the browser treats it as a real navigation (no popup blocker). */
+    document.addEventListener('DOMContentLoaded',function(){
+      if(!cfg.ctaUrl) return;
+      var url=buildUrl(cfg.ctaUrl);
+
+      /* Find modal confirm buttons — only inside #redirectModal */
+      var modalBtns=document.querySelectorAll('#redirectModal button, #redirectModal [onclick*="closeModal"]');
+      modalBtns.forEach(function(btn){
+        /* Replace button with a real <a> link */
+        var a=document.createElement('a');
+        a.href=url;
+        a.target='_blank';
+        a.rel='noopener';
+        a.className=btn.className;
+        a.innerHTML=btn.innerHTML;
+        a.style.cssText=btn.style.cssText+';text-decoration:none;display:inline-block;text-align:center;';
+        a.addEventListener('click',function(){
+          dl.push({event:'cta_click',cta_url:this.href,cta_source:'modal_confirm'});
+          /* Update href at click time in case sessionStorage changed */
+          this.href=buildUrl(cfg.ctaUrl);
+        });
+        btn.parentNode.replaceChild(a,btn);
+      });
+
+      /* Turn showModal triggers into links that open the modal. */
+      var ctaBtns=document.querySelectorAll('[onclick*="showModal"]');
+      ctaBtns.forEach(function(btn){
+        btn.removeAttribute('onclick');
+        btn.addEventListener('click',function(e){
+          e.preventDefault();
+          dl.push({event:'cta_click',cta_source:'showModal'});
+          if(typeof _origShow==='function') _origShow();
+        });
+      });
+
+      /* Rewrite ALL outbound <a> links pointing to the CTA domain
+         so UTM params pass through even on pages that use plain links
+         instead of the showModal pattern. */
+      if(cfg.ctaUrl){
+        try{
+          var ctaDomain=new URL(cfg.ctaUrl).hostname;
+          document.querySelectorAll('a[href]').forEach(function(a){
+            try{
+              var h=new URL(a.href);
+              if(h.hostname===ctaDomain){
+                a.href=buildUrl(a.href);
+                a.addEventListener('click',function(){
+                  this.href=buildUrl(this.getAttribute('data-orig-href')||this.href);
+                  dl.push({event:'cta_click',cta_url:this.href,cta_source:'outbound_link'});
+                });
+                a.setAttribute('data-orig-href',a.href.split('?')[0]);
+              }
+            }catch(e){}
+          });
+        }catch(e){}
+      }
+    });
+
+    /* ---------- 3. Scroll depth ---------- */
+    var scrollFired={};
+    function checkScroll(){
+      var h=document.documentElement.scrollHeight-window.innerHeight;
+      if(h<=0) return;
+      var pct=Math.round(window.scrollY/h*100);
+      [25,50,75,100].forEach(function(t){
+        if(pct>=t&&!scrollFired[t]){
+          scrollFired[t]=true;
+          dl.push({event:'scroll_depth',depth:t});
+        }
+      });
+    }
+    window.addEventListener('scroll',checkScroll,{passive:true});
+
+    /* ---------- 4. Time on page ---------- */
+    [15,30,60].forEach(function(s){
+      setTimeout(function(){
+        dl.push({event:'time_on_page',seconds:s});
+      },s*1000);
+    });
+
+    /* ---------- 5. Page view ---------- */
+    dl.push({event:'lander_view',lander:cfg.lander||window.location.pathname});
+
+  }catch(e){/* tracking must never break the page */}
+})();
+</script>
+<!-- PPC-TRACKING-END -->
+</body>
+</html>
