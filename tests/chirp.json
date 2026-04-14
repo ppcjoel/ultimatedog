@@ -1,0 +1,23 @@
+{
+  "name": "chirp",
+  "display_name": "Chirp",
+  "client": "0b0be6eb-4c0d-4838-8b5b-e3760f0a4f9a",
+  "status": "active",
+  "created": "2026-04-14T12:14:59.166899+00:00",
+  "variants": [
+    {
+      "id": "a",
+      "page": "chirp-itch-v1.html",
+      "test_id": "chirp_a",
+      "weight": 100,
+      "added": "2026-04-14T12:14:59.166899+00:00"
+    },
+    {
+      "id": "b",
+      "page": "chirp-superfood-test.html",
+      "test_id": "chirp_b",
+      "weight": 0,
+      "added": "2026-04-14T12:14:59.166899+00:00"
+    }
+  ]
+}
